@@ -1,0 +1,82 @@
+@model RoskildeProject.Models.Profile.EditProfileViewModel
+
+@{
+    ViewData["Title"] = "Brugeroplysnigner";
+}
+<div class="col-md-3">
+    @await Html.PartialAsync("_ProfileSidebar")
+</div>
+<div class="col-md-9 panel panel-default">
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Home")">Forside</a></li>
+        <li><a href="@Url.Action("Index", "Profile")">Min Profil</a></li>
+        <li class="active">Mine brugeroplysninger</li>
+    </ol>
+    <div class="panel-body">
+        <h2>Brugeroplysninger</h2>
+
+        <form asp-action="Edit">
+            <div class="form-horizontal">
+                <h4>Ret mine brugeroplysninger</h4>
+                <hr/>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id"/>
+                <div class="form-group">
+                    <label asp-for="Email" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Email" class="form-control"/>
+                        <span asp-validation-for="Email" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phoneNumber" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="phoneNumber" class="form-control"/>
+                        <span asp-validation-for="phoneNumber" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="fName" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="fName" class="form-control"/>
+                        <span asp-validation-for="fName" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="lName" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="lName" class="form-control"/>
+                        <span asp-validation-for="lName" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="address" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="address" class="form-control"/>
+                        <span asp-validation-for="address" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="postal" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="postal" class="form-control"/>
+                        <span asp-validation-for="postal" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

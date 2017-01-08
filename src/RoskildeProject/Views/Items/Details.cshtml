@@ -1,0 +1,93 @@
+@model RoskildeProject.Models.Item
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_LayoutContent";
+}
+
+<div class="clearfix panel panel-default">
+    <div id="header" class="panel-heading col-md-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Forside</a></li>
+            <li><a href="#">Søgning</a></li>
+            <li class="active">Product</li>
+        </ol>
+        <h2>@Model.title</h2>
+        <h4 class="">@Model.price kr</h4>
+    </div>
+    <article id="content" class="panel-body">
+        <div class="col-md-8 row" id="description">
+            <hr/>
+            <h5>
+                <span class="glyphicon glyphicon-time pull-left"> </span>
+                 @Model.created_at
+            </h5>
+            <div class="">
+                <hr />
+                <div class="image-box">
+                    @if (Model.pictures != null || Model.pictures.Count == 0)
+                    {
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="~/images/64.svg" style="width: 100%" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/@Model.pictures.FirstOrDefault().imagePath" style="width: 100%"/>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+
+            </div>
+
+            <span class="col-md-12" style="white-space: pre-line">
+                <hr/> 
+                @Model.description
+                <hr />
+            </span>
+            <div id="comment-box" class="col-md-12">
+
+            </div>
+        </div>
+        <div class="col-md-4 panel panel-default">
+            <h4>@Model.creator.fName @Model.creator.lName</h4>
+            <p>@Model.creator.address </br>
+                @Model.creator.postal</p>
+            <p>Tel. @Model.creator.PhoneNumber</p>
+            <i><span class="glyphicon glyphicon-time"></span> Bruger siden: @Model.creator.getCreatedAtDate()</i>
+        </div>
+        
+    </article>
+</div>
+
+<script type="text/javascript" src="~/comment-bundle.js"></script>

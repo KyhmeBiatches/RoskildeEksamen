@@ -1,0 +1,27 @@
+﻿<meta charset="utf-8" />
+
+
+<div id="profile-sidebar" class="row">
+        <ul class="list-group">
+            <h4>Username</h4>
+            <li class="list-group-item">
+                <a asp-controller="Profile" asp-action="Index">Mine annoncer</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Profile" asp-action="Edit">Mine indkøb til pickup-point</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Profile" asp-action="Edit">Køb pick up point</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Profile" asp-action="Edit">Mine brugeroplysninger</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Profile" asp-action="Edit">Skift adgangskode</a>
+            </li>
+        </ul>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

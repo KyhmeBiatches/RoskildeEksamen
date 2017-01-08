@@ -1,0 +1,82 @@
+@model RoskildeProject.Models.ItemViewModels.CreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_LayoutContent";
+}
+<div class="col-md-12 panel">
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Home")">Forside</a></li>
+        <li class="active">Opret Annonce</li>
+    </ol>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div class="form-horizontal">
+            <h2>Opret Annonce</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="title" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="title" class="form-control" />
+                    <span asp-validation-for="title" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" rows="8" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <textarea asp-for="description" rows="5" class="form-control"></textarea>
+                    <span asp-validation-for="description" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="price" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="price" class="form-control" />
+                    <span asp-validation-for="price" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label id="pictureUpload" class="col-md-2 control-label">Billede(r)</label>
+                <div class="col-md-10">
+                    <input id="fileUpload" class="form-control" type="file" accept="image/png, image/jpeg, image/gif" name="files" multiple />
+                    <br />
+                    <div id="image-holder" class="">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="category" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="category" asp-items="@Model.categoryList" class="btn btn-default "></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="subCategory" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="subCategory" asp-items="@Model.subCategoryList" class="btn btn-default "></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="condition" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="condition" asp-items="@Model.conditionList"  class="btn btn-default "></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="deliveryMethod" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="deliveryMethod" asp-items="@Model.deliveryMethodList"  class="btn btn-default "></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

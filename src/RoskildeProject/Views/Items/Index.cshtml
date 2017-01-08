@@ -1,0 +1,19 @@
+@model IEnumerable<RoskildeProject.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutContent";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Opret annonce</a>
+</p>
+
+@await Html.PartialAsync("_ItemList")
+
+<div id="search-box">
+</div>
+
+<script type="text/javascript" src="~/search-bundle.js" charset="utf-8"></script>

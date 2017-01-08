@@ -1,0 +1,24 @@
+@model IEnumerable<RoskildeProject.Models.Item>
+
+@{
+    ViewData["Title"] = "Min Profil";
+    Layout = "_LayoutContent";
+}
+
+<div class="col-md-3">
+    @await Html.PartialAsync("_ProfileSidebar")
+</div>
+<div class="col-md-9 panel panel-default">
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Home")">Forside</a></li>
+        <li class="active">Min Profil</li>
+    </ol>
+    <h2>Mine annoncer</h2>
+    <p>
+        <a asp-controller="Items" asp-action="Create">Opret annonce</a>
+    </p>
+    <hr />
+    <div class="panel-body">
+        @await Html.PartialAsync("_ItemList")
+    </div>
+</div>

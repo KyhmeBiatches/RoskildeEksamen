@@ -1,0 +1,98 @@
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model IEnumerable<RoskildeProject.Models.Item>
+<section class="row">
+    <div>
+               @foreach (var item in Model)
+            {
+                <a href=@Url.Action("Details", "Items", new {id = item.id})>
+                    <div class="itemsList row">
+                        <div class="col-md-2 imageWrapper">
+                            @if (item.pictures == null || item.pictures.Count == 0)
+                            {
+                                <img class="img-responsive" src="~/images/64.svg" style="width: 100%"/>
+                            }
+                            else
+                            {
+                                <img class="" src="~/@item.pictures.FirstOrDefault().imagePath" alt="@Html.DisplayFor(modelItem => item.title)">
+                            }
+                        </div>
+                        <div class="col-md-9">
+                            <h3 class="">@Html.DisplayFor(modelItem => item.title)</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="whiteText">@Html.DisplayFor(modelItem => item.description)</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="whiteText">@item.getFormatedDate()</h4>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <h4 class="pull-right whiteText">@Html.DisplayFor(modelItem => item.price) kr</h4>
+                                </div>
+                                <div class="col-md-12">
+                                    <h5>
+                                        <i class="whiteText">@Html.DisplayFor(modelItem => item.creator.postal)</i>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <hr/>
+              
+                    @*<div>
+                        <a asp-controller="items" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-controller="items" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                        <a asp-controller="items" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    </div>*@
+                
+            }
+
+        @*Toggle hiddden med C#. eller brug style="display: none"*@
+        <div hidden="hidden">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.created_at)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.price)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.created_at)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price) kr
+                            </td>
+                            <td>
+                                <a asp-controller="items" asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                <a asp-controller="items" asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                <a asp-controller="items" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,206 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+ul.navbar-nav.navbar-right {
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 1024px)
+img.bg {
+    left: 50%;
+    margin-left: -512px;
+}
+img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-content {
+    padding: 0;
+}
+
+.body-background {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+ul {
+    list-style-type: none;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#left-container {
+    margin-top: 56px;
+}
+
+.menu-button {
+    background-color: #ED7303;
+    color: #ffffff;
+    border-color: #d35400;
+}
+
+.menu-button:hover {
+    background-color: #d35400;
+    color: #ffffff;
+}
+
+.content-background {
+    margin-top: 10px;
+}
+
+.panel {
+    padding: 10px;
+}
+
+.create-comment-btn {
+    float: none;
+    margin: 10px;
+}
+
+.arrow {
+    height: 12px;
+    width: 12px;
+    
+    margin-top: 14px;
+    
+    transform: rotate(270deg);
+}
+
+.arrow:hover{
+    width: 15px;
+    height: 15px;
+    margin-top: 12px;
+}
+
+.arrow-down {
+    height: 12px;
+    width: 12px;
+    
+    margin-top: 14px;
+    
+    transform: rotate(180deg);
+}
+
+.arrow-down:hover{
+    width: 15px;
+    height: 15px;
+    margin-top: 12px;
+}
+
+.location-field {
+    width: 75px;
+}
+
+.form-input {
+    padding: 0;
+}
+
+.panel {
+    padding-bottom: 10px;
+}
+
+.locaiton-btn {
+    width: 75%;
+    margin-top: 10px;
+}
+
+
+.inline {
+    display: inline;
+}
+
+.title-filter {
+    position: absolute;
+    left: 230px;
+}
+
+.date-filter {
+    position:absolute;
+    left: 860px;
+}
+
+.price-filter {
+    position:absolute;
+    left: 1160px;
+}
+
+.description-border{
+    border-top:solid;
+    border-bottom:solid;
+    border-width: 1.5px;
+}
+
+.items-border{
+    border-bottom:solid;
+    border-width: 2.5px;
+}
+
+.navbar-width{
+   width:630px !important;
+}
+
+.scrolled {
+    background-color: transparent;
+    border: none;
+}
+
+.image-box {
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.inputField {
+    flex: 1;
+}
+
+.navbar-orange-text {
+    color: white !important;
+    font-weight: bolder;
+}
+
+.navbar-orange-text:hover {
+    color: #ed7303 !important;
+}
+
+.thumb-image {
+    float:left;width:100px;position:relative;padding:5px;
+}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B7C9474A-7CF1-400E-B938-4D50291C05CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B1451B6-2C6E-4A91-8E08-F3E6E41D7727}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RoskildeProject", "src\RoskildeProject\RoskildeProject.xproj", "{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55DC79FF-BEBD-44CC-A0FC-EAA0FCB5CC27} = {B7C9474A-7CF1-400E-B938-4D50291C05CB}
+	EndGlobalSection
+EndGlobal

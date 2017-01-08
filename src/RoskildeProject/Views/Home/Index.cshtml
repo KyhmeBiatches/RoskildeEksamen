@@ -1,0 +1,45 @@
+﻿@model RoskildeProject.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+<div id="homeHeader">
+    <div id="homeHeaderText">
+        <h1 class="text-center">Festival Stuff</h1>
+        <h5 class="text-center">-ting du har brug for til en fest</h5>
+    </div>
+    <form asp-controller="Items" asp-action="Search">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Søg" name="id" />
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Søg</button>
+            </span>
+        </div>
+    </form>
+</div>
+<div class="row">
+    @foreach (Category c in Model.categories)
+    {
+        <div class="col-md-3">
+            <ul class="center">
+                <a href="">
+                    <h3 class="">@c.name</h3>
+                </a>
+                @foreach (var sub in c.subCategories)
+                {
+                    <li class="subCategory">
+                        <a href="">
+                            <h5>@sub.name</h5>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+        <div id="recently-item">
+
+        </div>
+
+
+<script type="text/javascript" src="~/mainpage-bundle.js" charset="utf-8"></script>
