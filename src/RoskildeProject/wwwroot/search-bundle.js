@@ -33246,7 +33246,7 @@
 	                    { href: itemPath },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { className: 'itemList row' },
+	                        { className: 'itemsList row' },
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'col-md-2 imageWrapper' },

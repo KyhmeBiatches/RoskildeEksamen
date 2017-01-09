@@ -9,7 +9,7 @@ class SearchItem extends React.Component {
         return(
             <div className="">
                 <a href={itemPath}>
-                  <div className="itemList row">
+                  <div className="itemsList row">
                       <div className="col-md-2 imageWrapper">
                           <img className="" src={this.props.picture} alt=""></img>
                       </div>
