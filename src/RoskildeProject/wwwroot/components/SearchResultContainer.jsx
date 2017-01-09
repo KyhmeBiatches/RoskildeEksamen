@@ -21,7 +21,7 @@ class SearchResultContainer extends React.Component{
                   
     <div>
         <div className="btn-group" role="group" aria-label="...">
-            <button type="button" classNameclass="btn btn-default">Alle</button>
+            <button type="button" className="btn btn-default">Alle</button>
             <button type="button" className="btn btn-default">Privat</button>
             <button type="button" className="btn btn-default">Forhandler</button>
         </div>
@@ -93,12 +93,13 @@ class SearchResultContainer extends React.Component{
         return this.state.data.map((item) => {
             return (
                 <li key={item.id}>
-                <SearchElement
+                <SearchItem
             id={item.id}
             title={item.title}
             created_at={item.created_at}
             price={item.price}
             location={item.location}
+            picture={item.pictures[0].imagePath}
             />
                 </li>
             );

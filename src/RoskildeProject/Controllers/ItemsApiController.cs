@@ -23,7 +23,26 @@ namespace RoskildeProject.Controllers
         [HttpGet]
         public IEnumerable<Item> Getitems()
         {
-            return _context.items;
+            List<Item> items = (List<Item>)_context.items.ToList();
+            for (int i = 0; i < items.Count; i++)
+            {
+                Item item = items[i];
+                items[i].pictures = new List<Picture>();
+                if (_context.pictures.Where(p => p.item.id == item.id).Count() == 0 || _context.pictures.Where(p => p.item.id == item.id).FirstOrDefault().Equals(null))
+                {
+                    Picture p = new Picture();
+                    p.imagePath = "http://localhost:34379/images/64.svg";
+                    items[i].pictures.Add(p);
+                }
+                else
+                {
+                    Picture pic = _context.pictures.Where(p => p.item.id == item.id).FirstOrDefault();
+                    pic.imagePath = "http://localhost:34379/" + pic.imagePath;
+                    pic.owner = null;
+                    items[i].pictures.Add(pic);
+                }
+            }
+            return (items);
         }
 
         // GET: api/ItemsApi/5

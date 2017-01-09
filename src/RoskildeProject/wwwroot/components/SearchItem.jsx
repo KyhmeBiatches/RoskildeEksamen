@@ -5,13 +5,13 @@ import ReactDOM from 'react-dom'
 class SearchItem extends React.Component {
 
     render() {
-        var imagePath = "items/Details/" + this.props.id;
+        var itemPath = "Details/" + this.props.id;
         return(
             <div className="">
-                <a href={imagePath}>
+                <a href={itemPath}>
                   <div className="itemList row">
-                      <div class="col-md-2 imageWrapper">
-                          <img className="mainpageImg" src={this.props.picture} alt=""></img>
+                      <div className="col-md-2 imageWrapper">
+                          <img className="" src={this.props.picture} alt=""></img>
                       </div>
                       <div className="col-md-9">
                           <h3>{this.props.title}</h3>
@@ -35,34 +35,8 @@ class SearchItem extends React.Component {
                 <hr/>
             </div>
         );
-                                    }
-                          _loadItemList() {
-                              $.ajax({
-                                  url: 'http://localhost:34379/api/itemsapi',
-                                  datatype: 'json',
-                                  success: function (data) {
-                                      this.setState({ data: data });
-                                  }.bind(this),
-                                  error: function (xhr, status, err) {
-                                      console.error('#GET Error', status, err.toString());
-                                  }.bind(this)
-                              });
-                          }
-
-                          _renderItems() {
-                              return this.state.data.map((item) => {
-                                  return (
-                                     <li key={item.id}>
-                                     <SearchItem
-                                 id={item.id}
-                          title={item.title}
-                          description={item.description}
-                          created_at={item.created_at}
-                          price={item.price}
-                          location={item.location} />
-        </li>);
-        });
         }
+                          
         }
 
         ReactDOM.render(

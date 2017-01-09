@@ -28,67 +28,6 @@ module.exports = {
 }
 
 module.exports = {
-    entry: './wwwroot/components/entry-search-results.js',
-    output: {
-        path: './wwwroot',
-        filename: 'search-bundle.js'
-
-    },
-
-    module: {
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
-    },
-    external: {
-        react: 'React'
-    },
-    plugins: [
-    new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery"
-    })
-    ]
-}
-
-module.exports = {
-    entry: './wwwroot/components/entry-filter-box.js',
-    output: {
-        path: './wwwroot',
-        filename: 'search-bundle.js'
-    },
-
-    module: {
-        loaders: [
-            {
-                test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
-    },
-    external: {
-        react: 'React'
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
-    ]
-}
-
-module.exports = {
     entry: './wwwroot/js/entry-mainpage.js',
     output: {
         path: './wwwroot',
@@ -146,5 +85,35 @@ module.exports = {
         $: "jquery",
         jQuery: "jquery"
     })
+    ]
+}
+
+module.exports = {
+    entry: { searchBundle: ['./wwwroot/components/entry-filter-box.js', './wwwroot/components/entry-search-results.js'] },
+    output: {
+        path: './wwwroot',
+        filename: 'search-bundle.js'
+    },
+
+    module: {
+        loaders: [
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            }
+        ]
+    },
+    external: {
+        react: 'React'
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
     ]
 }
